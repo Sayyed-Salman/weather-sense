@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="https://static-00.iconduck.com/assets.00/google-cloud-icon-512x412-8rnz6wkz.png" type="image/x-icon">
+    <title>WeatherSense</title>
+    <script src="{{ url_for('static', filename='js/getLocNow.js') }}"></script>
+    {% block head %}{% endblock %}
+</head>
+<body class="h-screen">
+    <nav class="flex items-center flex-wrap justify-between gap-2 bg-blue-300 p-4">
+        <div class="flex items-center">
+            <i class="fa-solid fa-cloud fa-lg mx-2" style="color: #2c67ce; display: block;"></i>
+            <h1 class="text-xl font-bold text-white" onclick="window.location.href='{{url_for('home.index')}}'" >WeatherSense</h1>
+        </div>
+        <div class="flex items-center">
+            <button class="bg-white text-blue-500 font-medium py-2 px-4 rounded-full mr-2" id="getLocationBtn">Get Temperature</button>
+            <button class="bg-white text-blue-500 font-medium py-2 px-4 rounded-full" onclick="window.location.href='/share'">Share</button>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+</body>
+</html>

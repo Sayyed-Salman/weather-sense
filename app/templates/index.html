@@ -1,0 +1,43 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<div class="container-fluid bg-gray-200 flex items-center justify-center flex-col gap-4 pt-5 pb-5">
+
+    <div class="container-sm text-center rounded">
+        <h1 class="text-4xl lg:text-8xl font-bold text-gray-800">WeatherSense</h1>
+        <h2 class="text-xl text-gray-600 mt-2">Weather forecast based on your location</h2>
+        <p class="text-lg text-gray-700 mt-4">Try Now</p>
+    </div>
+
+    <div class="rounded">
+        <div class="max-w-md mx-auto bg-white rounded-lg shadow-lg p-6">
+            <p class="text-gray-700 mb-4">This Flask application utilizes Python, Flask, and Tailwind CSS to create a
+                user-friendly interface for displaying the current weather based on the user's location. The weather data is
+                obtained from the Open-Meteo weather API.</p>
+        
+            <p class="text-gray-700 mb-4">When a user accesses the application, the Flask server retrieves the user's location
+                information, such as latitude and longitude, using browser geolocation. Then, it makes a request to the
+                Open-Meteo weather API to fetch the current weather data for that location.</p>
+        
+            <p class="text-gray-700 mb-4">The weather information, including temperature, humidity, wind speed, and conditions,
+                is then displayed on the webpage in a visually appealing manner using Tailwind CSS for styling.</p>
+        
+            <p class="text-gray-700 mb-4">The Flask application is hosted on PythonAnywhere, a platform that allows easy
+                deployment and hosting of Flask applications. Users can access the application through its PythonAnywhere URL to
+                view the current weather based on their location.</p>
+        
+            <p class="text-gray-700 mb-4">This application demonstrates the power of Flask and Python in combination with
+                Tailwind CSS to create dynamic and responsive web applications, providing users with up-to-date weather
+                information at their fingertips.</p>
+        
+            <p class="text-gray-700 mb-4">Visit <a class="text-blue-500"
+                    href="https://www.pythonanywhere.com/">PythonAnywhere</a> to learn more about hosting Flask applications,
+                and check out the <a class="text-blue-500" href="https://open-meteo.com/">Open-Meteo</a> API for weather data
+                integration.</p>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}

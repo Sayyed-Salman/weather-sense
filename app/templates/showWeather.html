@@ -1,0 +1,28 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<div class="container mx-auto bg-blue-200 p-4">
+
+    <h1 class="text-2xl font-bold py-10 text-center"> {{cityname}}</h1>
+
+    <div class="flex gap-2 flex-wrap justify-center">
+        {% for time, temp, status, emoji in current_weather %}
+        <div class="rounded-md bg-yellow-300 p-2 min-w-[250px] hover:bg-green-500" id="weatherObj">
+            <div class="flex justify-between gap-2" id="time">
+                <p class="font-bold" id="hours"> {{time.hours_minutes}} </p>
+                <p class="font-bold" id="date"> {{time.date}} </p>
+                <p class=""> {{ emoji }} </p>
+            </div>
+            <div class="my-2">
+                <h1 class="text-2xl font-bold"> {{temp}}° </h1>
+            </div>
+            <div class="w-25 my-2">
+                <p> {{status}} </p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+<script src="{{ url_for('static', filename='js/changeColorOnTime.js') }}"></script>
+{% endblock %}
